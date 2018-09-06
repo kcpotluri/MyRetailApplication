@@ -1,0 +1,14 @@
+version: "3"
+services:
+  myretailapp:
+    build: .
+    ports:
+    - 8085:8085
+    links:
+    - mongodb
+
+  mongodb:
+    image: mongo
+    ports:
+    - 27017:27017
+    restart: always
